@@ -1,0 +1,54 @@
+<div class="panel panel-default">
+  <div class="panel-heading justify-content-center">
+    <h1 class="panel-title text-center">Project Waterloo</h1>
+  </div>
+
+  <div class="panel-body form-horizontal">
+    <div class="row justify-content-center">
+      <div class="offset-1 col-3">
+        <div class="form-group">
+          <input class="form-control input-sm"
+                 [(ngModel)]="searchTerm"
+                 type="text"
+                 id="SearchTerm"
+                 placeholder="Search Term" />
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-group">
+          <input class="form-control input-sm"
+                 [(ngModel)]="searchUrl"
+                 type="text"
+                 id="SearchUrl"
+                 placeholder="Search Url" />
+        </div>
+      </div>
+      <div class="col-2">
+        <div>
+          <button class="btn btn-primary" (click)="getPageRanking()">Search!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body form-horizontal table-div">
+    <table *ngIf="pageRankings.length > 0" class="table table-bordered table-striped table-hover">
+      <tr>
+        <th>Search Term</th>
+        <th>Search Url</th>
+        <th>Page Ranking</th>
+        <th>Message</th>
+      </tr>
+      <tr *ngFor="let pr of pageRankings.slice().reverse()">
+        <td>{{pr.searchTerm}}</td>
+        <td>{{pr.searchUrl}}</td>
+        <td *ngIf="pr.found">{{pr.ranking}}</td>
+        <td *ngIf="!pr.found">Not Found</td>
+        <td>{{pr.message}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<router-outlet />
