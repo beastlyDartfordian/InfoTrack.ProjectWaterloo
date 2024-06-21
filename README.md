@@ -6,7 +6,7 @@ It comes in two parts:
 
 It also uses xUnit and FakeItEasy for some basic units tests
 
-Be sure to put the provided Serp API key in the appsettings before running the API
+Be sure to put the seperately provided Serp API key in the appsettings before running the API
 
 - Run following commands InfoTrack.ProjectWaterloo/FrontEnd with Terminal or similar to start the Angular SPA:
 
