@@ -34,7 +34,7 @@ namespace API.Tests.Services
                 }
             };
 
-            A.CallTo(() => this.fakeSerpApiService.GetResults(A<string>.Ignored))
+            A.CallTo(() => this.fakeSerpApiService.GetResults(A<string>.Ignored, null))
                 .Returns(serpApiResult);
 
             // Act
@@ -62,7 +62,7 @@ namespace API.Tests.Services
                 }
             };
             
-            A.CallTo(() => this.fakeSerpApiService.GetResults(A<string>.Ignored))
+            A.CallTo(() => this.fakeSerpApiService.GetResults(A<string>.Ignored, null))
                 .Returns(serpApiResult);
 
             // Act
@@ -85,7 +85,7 @@ namespace API.Tests.Services
                 SearchMetadata = new SearchMetadata { Status = "Error", ErrorMessage = "API Error" }
             };
 
-            A.CallTo(() => this.fakeSerpApiService.GetResults(A<string>.Ignored))
+            A.CallTo(() => this.fakeSerpApiService.GetResults(A<string>.Ignored, null))
                 .Returns(serpApiResult);
 
             // Act
