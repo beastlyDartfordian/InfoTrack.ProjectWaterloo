@@ -36,6 +36,7 @@ Couple of reasons why the frontend might not run:
 
 - It was built using NodeJs v20.15.0, so you may need to update to this version
 - You may not have angular install in which case you can run the following command: npm install -g @angular/cli
+- Sometimes it doesn't let you run ng commands as its unsigned. You can bypass this temporarily by running: Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 ## Notes
 
